@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Luoghi di Foggia – Foggia Tour Virtuale</title>
+  <title>Mappa dei percorsi – Foggia Tour Virtuale</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,7 +10,104 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
+  <!-- Stili generali del sito -->
   <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- Leaflet per la mappa -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity=""
+    crossorigin=""
+  />
+
+  <style>
+    /* Stili minimi per la sezione mappa (se vuoi, poi li sposti nel tuo CSS) */
+    .hero-mappa {
+      margin-bottom: 1rem;
+    }
+
+    .hero-mappa h2 {
+      margin-bottom: 0.4rem;
+    }
+
+    .map-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .map-panel {
+      flex: 2 1 400px;
+      min-width: 320px;
+    }
+
+    #mappa-percorsi {
+      width: 100%;
+      height: 480px;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-sidebar {
+      flex: 1 1 260px;
+      min-width: 260px;
+      background: #ffffff;
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .map-sidebar h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .map-sidebar p {
+      margin-top: 0;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .itinerary-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.75rem 0 0;
+      font-size: 0.9rem;
+    }
+
+    .itinerary-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .itinerary-list a {
+      text-decoration: none;
+      color: #21426a;
+    }
+
+    .itinerary-list a:hover {
+      text-decoration: underline;
+    }
+
+    .pill-it {
+      display: inline-block;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: #e4edf9;
+      font-size: 0.75rem;
+      margin-left: 0.3rem;
+      color: #21426a;
+    }
+
+    @media (max-width: 768px) {
+      #mappa-percorsi {
+        height: 360px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="app-shell">
@@ -25,8 +122,8 @@
         </div>
         <nav class="main-nav">
           <a href="../index.html">Home</a>
-          <a href="../mappa.html">Mappa</a>
-          <a href="../itinerari/01-campi-diomedei/index.html" class="active">Percorsi</a>
+          <a href="../mappa.html" class="active">Mappa</a>
+          <a href="../itinerari/01-campi-diomedei/index.html">Percorsi</a>
           <a href="index.html">Luoghi</a>
           <a href="../svago.html">Svago</a>
           <a href="../guida-ai.html">Guida AI</a>
@@ -35,38 +132,194 @@
       </header>
 
       <main class="layout-main">
-        <section class="hero">
-          <div class="hero-eyebrow"><span class="dot"></span> Itinerario</div>
-          <h2>Luoghi di Foggia</h2>
+        <!-- HERO MAPPA -->
+        <section class="hero hero-mappa">
+          <div class="hero-eyebrow"><span class="dot"></span> Mappa</div>
+          <h2>Mappa dei 10 itinerari di Foggia</h2>
           <p class="hero-tagline">
-            Indice dei luoghi principali: piazze, chiese, parchi, musei e spazi della città.
+            Una vista d’insieme dei percorsi principali: ogni itinerario è rappresentato da un segnaposto,
+            con link diretto alla pagina dedicata.
           </p>
           <p class="hero-note">
-            Questa è la pagina iniziale dell'itinerario. Gli studenti potranno aggiungere mappa, tappe,
-            foto, video e curiosità.
+            La mappa è pensata per avere un colpo d’occhio immediato: dove si trovano i percorsi,
+            come sono distribuiti nella città, da dove ti conviene iniziare.
           </p>
         </section>
 
+        <!-- MAPPA + ELENCO ITINERARI -->
+        <section class="map-layout">
+          <section class="map-panel">
+            <div id="mappa-percorsi"></div>
+          </section>
+
+          <aside class="map-sidebar">
+            <h3>Itinerari disponibili</h3>
+            <p>Clicca sul nome per aprire la pagina del percorso. Sulla mappa puoi toccare i segnaposto per vedere titolo e link.</p>
+            <ol class="itinerary-list">
+              <li>
+                1. <a href="../itinerari/01-campi-diomedei/index.html">Dalle capanne ai parchi</a>
+                <span class="pill-it">Campi Diomedei</span>
+              </li>
+              <li>
+                2. <a href="../itinerari/piazza-del-lago-cattedrale-via-arpi.html">Là dove Foggia è nata</a>
+                <span class="pill-it">Piazza del Lago</span>
+              </li>
+              <li>
+                3. <a href="../itinerari/sotto-foggia-ipogei-federiciani.html">Sotto Foggia</a>
+                <span class="pill-it">Ipogei federiciani</span>
+              </li>
+              <li>
+                4. <a href="../itinerari/dogana-delle-pecore.html">La città delle greggi</a>
+                <span class="pill-it">Dogana</span>
+              </li>
+              <li>
+                5. <a href="../itinerari/croci-sulla-pianura.html">Croci sulla pianura</a>
+                <span class="pill-it">Epitaffio & Croci</span>
+              </li>
+              <li>
+                6. <a href="../itinerari/foggia-settecentesca.html">La Foggia settecentesca</a>
+                <span class="pill-it">Palazzi e vie</span>
+              </li>
+              <li>
+                7. <a href="../itinerari/il-corso-negozi-palazzi.html">Il corso</a>
+                <span class="pill-it">Corso Vittorio Emanuele II</span>
+              </li>
+              <li>
+                8. <a href="../itinerari/villa-comunale.html">Il grande giardino</a>
+                <span class="pill-it">Villa comunale</span>
+              </li>
+              <li>
+                9. <a href="../itinerari/foggia-che-studia.html">Foggia che studia</a>
+                <span class="pill-it">Università</span>
+              </li>
+              <li>
+                10. <a href="../itinerari/musei-e-memoria.html">Musei e memoria</a>
+                <span class="pill-it">Musei</span>
+              </li>
+            </ol>
+          </aside>
+        </section>
+
+        <!-- SEZIONE DIDATTICA (RIADATTATA) -->
         <section class="side-panel">
           <section class="school-section">
             <h3>Per la classe quinta</h3>
             <p>
-              In questa pagina vanno progettati:
+              Su questa pagina gli studenti possono lavorare su:
             </p>
             <p>
-              • una breve introduzione all'itinerario;<br />
-              • l'elenco delle tappe principali;<br />
-              • una mappa del percorso e, se possibile, un video o una galleria immagini.
+              • migliorare la distribuzione dei percorsi sulla mappa;<br />
+              • aggiungere descrizioni sintetiche agli itinerari;<br />
+              • inserire icone diverse per i vari tipi di percorso (storico, verde, religioso, ecc.);<br />
+              • collegare la mappa a video o gallery delle singole tappe.
             </p>
           </section>
         </section>
       </main>
 
       <footer class="site-footer">
-        <span>Progetto “Foggia Tour Virtuale” – Luoghi di Foggia</span>
-        <span class="footer-tag">Bozza itinerario</span>
+        <span>Progetto “Foggia Tour Virtuale” – Mappa dei percorsi</span>
+        <span class="footer-tag">Versione beta</span>
       </footer>
     </div>
   </div>
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity=""
+    crossorigin="">
+  </script>
+
+  <script>
+    // Inizializzazione mappa centrata su Foggia (coordinate indicative)
+    const map = L.map('mappa-percorsi').setView([41.4625, 15.5450], 13);
+
+    // Sfondo mappa (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Elenco percorsi con coordinate indicative (da affinare sul campo)
+    const itinerari = [
+      {
+        nome: 'Dalle capanne ai parchi',
+        descr: 'Campi Diomedei – villaggio neolitico e parco moderno',
+        lat: 41.4735, lng: 15.5410,
+        url: '../itinerari/01-campi-diomedei/index.html'
+      },
+      {
+        nome: 'Là dove Foggia è nata',
+        descr: 'Piazza del Lago, Cattedrale, via Arpi',
+        lat: 41.4623, lng: 15.5465,
+        url: '../itinerari/piazza-del-lago-cattedrale-via-arpi.html'
+      },
+      {
+        nome: 'Sotto Foggia',
+        descr: 'Ipogei e città di Federico II',
+        lat: 41.4627, lng: 15.5435,
+        url: '../itinerari/sotto-foggia-ipogei-federiciani.html'
+      },
+      {
+        nome: 'La città delle greggi',
+        descr: 'Dogana della Mena delle Pecore',
+        lat: 41.4620, lng: 15.5420,
+        url: '../itinerari/dogana-delle-pecore.html'
+      },
+      {
+        nome: 'Croci sulla pianura',
+        descr: 'Epitaffio e Cappellone delle Croci',
+        lat: 41.4485, lng: 15.5510,
+        url: '../itinerari/croci-sulla-pianura.html'
+      },
+      {
+        nome: 'La Foggia settecentesca',
+        descr: 'Palazzi e vie del Settecento',
+        lat: 41.4605, lng: 15.5405,
+        url: '../itinerari/foggia-settecentesca.html'
+      },
+      {
+        nome: 'Il corso',
+        descr: 'Corso Vittorio Emanuele II – negozi e palazzi',
+        lat: 41.4625, lng: 15.5400,
+        url: '../itinerari/il-corso-negozi-palazzi.html'
+      },
+      {
+        nome: 'Il grande giardino',
+        descr: 'Villa comunale',
+        lat: 41.4585, lng: 15.5445,
+        url: '../itinerari/villa-comunale.html'
+      },
+      {
+        nome: 'Foggia che studia',
+        descr: 'Università e spazi della vita studentesca',
+        lat: 41.4650, lng: 15.5415,
+        url: '../itinerari/foggia-che-studia.html'
+      },
+      {
+        nome: 'Musei e memoria',
+        descr: 'Musei dove Foggia si racconta',
+        lat: 41.4628, lng: 15.5440,
+        url: '../itinerari/musei-e-memoria.html'
+      }
+    ];
+
+    const markers = [];
+
+    itinerari.forEach(it => {
+      const marker = L.marker([it.lat, it.lng]).addTo(map);
+      marker.bindPopup(
+        '<strong>' + it.nome + '</strong><br>' +
+        it.descr + '<br>' +
+        '<a href=\"' + it.url + '\">Apri itinerario</a>'
+      );
+      markers.push(marker);
+    });
+
+    // Adatta la mappa per includere tutti i marker
+    const group = L.featureGroup(markers);
+    map.fitBounds(group.getBounds().pad(0.2));
+  </script>
 </body>
 </html>
