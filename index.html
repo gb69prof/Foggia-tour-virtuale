@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <title>Foggia Tour Virtuale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Guida digitale per scoprire Foggia: mappe, percorsi, storia, svago ed enogastronomia."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <div class="app-shell">
+    <div class="app-content">
+      <!-- HEADER -->
+      <header class="site-header">
+        <div class="logo-title">
+          <span class="logo-icon">FTV</span>
+          <div class="title-block">
+            <h1>Foggia Tour Virtuale</h1>
+            <p class="subtitle">Guida interattiva alla città tra storia, svago e cultura</p>
+          </div>
+        </div>
+
+        <nav class="main-nav">
+          <a href="index.html" class="active">Home</a>
+          <a href="mappa.html">Mappa</a>
+          <a href="itinerari/01-campi-diomedei/index.html">Percorsi</a>
+          <a href="luoghi/index.html">Luoghi</a>
+          <a href="svago.html">Svago</a>
+          <a href="guida-ai.html">Guida AI</a>
+          <a href="info.html">Info</a>
+        </nav>
+      </header>
+
+      <!-- CONTENUTO PRINCIPALE -->
+      <main class="layout-main">
+        <!-- HERO / PRESENTAZIONE -->
+        <section class="hero">
+          <div class="hero-eyebrow"><span class="dot"></span> App turistica • Foggia</div>
+          <h2>Scopri Foggia passo dopo passo.</h2>
+          <p class="hero-tagline">
+            Dalle capanne neolitiche ai parchi, dagli ipogei federiciani alla villa comunale, dalle università ai musei:
+            una città raccontata in 10 itinerari.
+          </p>
+
+          <div class="hero-highlight">
+            <span>🗺️</span>
+            <div>
+              <strong>10 itinerari principali</strong> tra Campi Diomedei, via Arpi, Dogana delle Pecore, quartiere
+              settecentesco, corso, villa comunale, università e musei.
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="mappa.html" class="btn-primary">
+              <span>Apri la mappa interattiva</span>
+              <span>➜</span>
+            </a>
+            <a href="itinerari/01-campi-diomedei/index.html" class="btn-ghost">
+              <span>Esplora gli itinerari</span>
+            </a>
+          </div>
+
+          <p class="hero-note">
+            Scegli <strong>da dove parti</strong> (stazione, centro, periferia), segui il percorso suggerito e lascia che la
+            città ti parli.
+          </p>
+
+          <div class="hero-meta">
+            <div class="pill">
+              <span class="icon">📍</span>
+              <span>Geolocalizzazione attiva (in fase di sviluppo)</span>
+            </div>
+            <div class="pill">
+              <span class="icon">🎧</span>
+              <span>Audio‑storie e video brevi per ogni tappa</span>
+            </div>
+          </div>
+
+          <section class="itinerari-list">
+            <h3>I 10 itinerari</h3>
+            <ul>
+              <li><a href="itinerari/01-campi-diomedei/index.html">1. Dalle capanne ai parchi: Foggia verde dalle origini</a></li>
+              <li><a href="itinerari/02-piazza-del-lago/index.html">2. Là dove Foggia è nata: Piazza del Lago, Cattedrale, via Arpi</a></li>
+              <li><a href="itinerari/03-zona-federiciana/index.html">3. Sotto Foggia: gli ipogei e la città di Federico II</a></li>
+              <li><a href="itinerari/04-dogana-delle-pecore/index.html">4. La città delle greggi: dalla Dogana delle Pecore alla Foggia moderna</a></li>
+              <li><a href="itinerari/05-epitaffio-croci/index.html">5. Croci sulla pianura: Epitaffio e Cappellone</a></li>
+              <li><a href="itinerari/06-settecentesco/index.html">6. La Foggia settecentesca: palazzi e vie del Settecento</a></li>
+              <li><a href="itinerari/07-corso-vittorio-emanuele/index.html">7. Il corso: negozi, palazzi e vita quotidiana</a></li>
+              <li><a href="itinerari/08-villa-comunale/index.html">8. La villa comunale: il grande giardino della città</a></li>
+              <li><a href="itinerari/09-universita/index.html">9. Foggia che studia: campus, aule e vita universitaria</a></li>
+              <li><a href="itinerari/10-musei/index.html">10. Musei e memoria: dove Foggia si racconta</a></li>
+            </ul>
+          </section>
+        </section>
+
+        <!-- COLONNA DESTRA: CARDS + PROGETTO SCUOLA -->
+        <section class="side-panel">
+          <section class="cards-section">
+            <div class="cards-section-header">
+              <h3>Cosa puoi esplorare</h3>
+              <small>Sezioni principali dell'app</small>
+            </div>
+
+            <div class="cards-grid">
+              <article class="info-card" onclick="location.href='itinerari/01-campi-diomedei/index.html'">
+                <div class="info-card-header">
+                  <h4>Storia e cultura</h4>
+                  <span class="badge">Percorsi storici</span>
+                </div>
+                <p>
+                  Dalle origini ai luoghi federiciani: Campi Diomedei, Piazza del Lago, Cattedrale, via Arpi, ipogei,
+                  Dogana della Mena delle Pecore, quartiere settecentesco.
+                </p>
+                <a href="itinerari/01-campi-diomedei/index.html" class="card-link">
+                  <span>Vai agli itinerari storici</span>
+                  <span>↗</span>
+                </a>
+              </article>
+
+              <article class="info-card" onclick="location.href='svago.html'">
+                <div class="info-card-header">
+                  <h4>Svago e tempo libero</h4>
+                  <span class="badge">Giovani & famiglie</span>
+                </div>
+                <p>
+                  Villa comunale, corso Vittorio Emanuele II e altri luoghi dove passeggiare, incontrarsi, vivere la
+                  città oggi.
+                </p>
+                <a href="svago.html" class="card-link">
+                  <span>Scopri i luoghi di svago</span>
+                  <span>↗</span>
+                </a>
+              </article>
+
+              <article class="info-card" onclick="location.href='itinerari/10-musei/index.html'">
+                <div class="info-card-header">
+                  <h4>Enogastronomia e cultura</h4>
+                  <span class="badge">Sapori & musei</span>
+                </div>
+                <p>
+                  Mercati, prodotti tipici, locali storici e musei: un itinerario tra cucina foggiana, memorie e
+                  tradizioni del territorio.
+                </p>
+                <a href="itinerari/10-musei/index.html" class="card-link">
+                  <span>Vai ai percorsi culturali</span>
+                  <span>↗</span>
+                </a>
+              </article>
+
+              <article class="info-card" onclick="location.href='guida-ai.html'">
+                <div class="info-card-header">
+                  <h4>Guida AI</h4>
+                  <span class="badge">Chat‑cicerone</span>
+                </div>
+                <p>
+                  Un assistente virtuale che risponde alle domande su luoghi, storia, curiosità e ti aiuta a orientarti
+                  tra gli itinerari.
+                </p>
+                <a href="guida-ai.html" class="card-link">
+                  <span>Apri la guida AI</span>
+                  <span>↗</span>
+                </a>
+              </article>
+            </div>
+          </section>
+
+          <section class="school-section">
+            <h3>Un laboratorio di grafica e turismo</h3>
+            <p>
+              Questa interfaccia è il <strong>prototipo base</strong> pensato per una classe quinta tecnico‑grafica.
+              Da qui gli studenti possono:
+            </p>
+            <p>
+              • perfezionare colori, icone e layout;<br />
+              • definire le schermate per ognuno dei 10 itinerari;<br />
+              • progettare l'identità visiva del progetto "Foggia Tour Virtuale".
+            </p>
+          </section>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <span>Progetto “Foggia Tour Virtuale” – Web app sperimentale per la guida turistica e culturale di Foggia.</span>
+        <span class="footer-tag">v0.3 • struttura GitHub con itinerari</span>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
