@@ -35,17 +35,64 @@
       </header>
 
       <main class="layout-main">
-        <!-- HERO PERCORSO -->
-        <section class="hero">
-          <div class="hero-eyebrow"><span class="dot"></span> Itinerario</div>
-          <h2>Dalle capanne ai parchi: Foggia verde dalle origini</h2>
-          <p class="hero-tagline">
-            Dal villaggio neolitico dei Campi Diomedei ai parchi cittadini: un percorso che unisce archeologia e verde urbano.
-          </p>
-          <p class="hero-note">
-            Questo itinerario mette in dialogo il paesaggio delle origini con il verde della città di oggi:
-            dalle capanne neolitiche ai parchi dove Foggia respira e si incontra.
-          </p>
+        <!-- HERO PERCORSO: testo + mappa + video nella colonna sinistra -->
+        <section class="hero hero-itinerario">
+          <div class="hero-text">
+            <div class="hero-eyebrow"><span class="dot"></span> Itinerario</div>
+            <h2>Dalle capanne ai parchi: Foggia verde dalle origini</h2>
+            <p class="hero-tagline">
+              Dal villaggio neolitico dei Campi Diomedei ai parchi cittadini: un percorso che unisce archeologia e verde urbano.
+            </p>
+            <p class="hero-note">
+              Questo itinerario mette in dialogo il paesaggio delle origini con il verde della città di oggi:
+              dalle capanne neolitiche ai parchi dove Foggia respira e si incontra.
+            </p>
+          </div>
+
+          <div class="hero-media">
+            <!-- Mappa prima dei video -->
+            <div class="map-wrapper">
+              <iframe
+                src="https://www.google.com/maps?q=Campi+Diomedei+Foggia&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+
+            <div class="video-grid">
+              <!-- Video 1: presentazione -->
+              <article class="video-card">
+                <div class="video-card-header">
+                  <h4>Video-presentazione dei Campi Diomedei</h4>
+                  <p>Uno sguardo rapido al parco, tra archeologia e verde urbano.</p>
+                </div>
+                <div class="video-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/jQPxf3NOF0w"
+                    title="Campi Diomedei - video presentazione"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </article>
+
+              <!-- Video 2: intervista a Siro -->
+              <article class="video-card">
+                <div class="video-card-header">
+                  <h4>Intervista a Siro, il primo foggiano</h4>
+                  <p>Una "chicca" per ascoltare la storia raccontata in prima persona.</p>
+                </div>
+                <div class="video-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/L2ZAAvXPlrs"
+                    title="Intervista a Siro - il primo foggiano"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                  </iframe>
+                </div>
+              </article>
+            </div>
+          </div>
         </section>
 
         <div class="content-layout">
@@ -99,7 +146,7 @@
               </p>
             </section>
 
-            <!-- 4. Come fruirlo oggi + video -->
+            <!-- 4. Come fruirlo oggi (solo testo, media spostati nel hero) -->
             <section class="content-card" id="fruizione">
               <h3>Come fruire i Campi Diomedei oggi</h3>
               <p>
@@ -112,69 +159,9 @@
                 <li><strong>Consigliato:</strong> visitare nelle ore di luce, con scarpe comode e, d'estate, cappellino e acqua.</li>
                 <li><strong>Per le scuole:</strong> il percorso si presta a uscite didattiche su archeologia, paesaggio e cittadinanza.</li>
               </ul>
-
-              <div class="video-grid">
-                <!-- Video 1: presentazione -->
-                <article class="video-card">
-                  <div class="video-card-header">
-                    <h4>Video-presentazione dei Campi Diomedei</h4>
-                    <p>Uno sguardo rapido al parco, tra archeologia e verde urbano.</p>
-                  </div>
-                  <div class="video-wrapper">
-                    <iframe
-                      src="https://www.youtube.com/embed/jQPxf3NOF0w"
-                      title="Campi Diomedei - video presentazione"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen>
-                    </iframe>
-                  </div>
-                </article>
-
-                <!-- Video 2: intervista a Siro -->
-                <article class="video-card">
-                  <div class="video-card-header">
-                    <h4>Intervista a Siro, il primo foggiano</h4>
-                    <p>Una "chicca" per ascoltare la storia raccontata in prima persona.</p>
-                  </div>
-                  <div class="video-wrapper">
-                    <iframe
-                      src="https://www.youtube.com/embed/L2ZAAvXPlrs"
-                      title="Intervista a Siro - il primo foggiano"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen>
-                    </iframe>
-                  </div>
-                </article>
-              </div>
             </section>
 
-            <!-- 5. Mappa e geolocalizzazione -->
-            <section class="content-card" id="mappa">
-              <h3>Dove si trova &amp; come arrivarci</h3>
-              <p>
-                I Campi Diomedei si trovano nella zona nord di Foggia, in una posizione facilmente raggiungibile dal centro città
-                e dalla stazione. Usa la mappa qui sotto per orientarti e, se vuoi, apri il percorso direttamente in Google Maps.
-              </p>
-
-              <div class="map-wrapper">
-                <iframe
-                  src="https://www.google.com/maps?q=Campi+Diomedei+Foggia&output=embed"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-              </div>
-
-              <div class="cta-row">
-                <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Campi+Diomedei+Foggia" target="_blank" rel="noopener">
-                  Apri in Google Maps <span>↗</span>
-                </a>
-                <a class="btn outline" href="../../mappa.html">
-                  Torna alla mappa generale <span>🗺️</span>
-                </a>
-              </div>
-            </section>
-
-            <!-- 6. Collegamento ai parchi moderni -->
+            <!-- 5. Collegamento ai parchi moderni -->
             <section class="content-card" id="parchi-moderni">
               <h3>Dal villaggio ai parchi: le tappe verdi di oggi</h3>
               <p>
@@ -213,7 +200,7 @@
                 <li>rivedere e migliorare i testi (introduzione, storia, approfondimento);</li>
                 <li>aggiungere una <strong>timeline</strong> grafica (Neolitico → Ippodromo → Parco moderno);</li>
                 <li>inserire nuove foto o brevi clip video girate da loro;</li>
-                <li>progettare una versione con <strong>mappa interattiva</strong> (Leaflet) a partire da questa mappa base;</li>
+                <li>progettare una versione con <strong>mappa interattiva</strong> (Leaflet) a partire dalla mappa a sinistra;</li>
                 <li>collegare questo itinerario agli altri percorsi storici di Foggia.</li>
               </ul>
               <p class="school-note">
