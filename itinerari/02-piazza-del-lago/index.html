@@ -30,21 +30,22 @@
       margin-bottom: 0.3rem;
     }
 
+    .hero-itinerario .hero-note {
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-itinerario .hero-longtext p {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
     .intro-layout {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.75rem;
       margin-top: 1.5rem;
     }
 
     .intro-left {
-      flex: 1.2 1 360px;
-      min-width: 320px;
-    }
-
-    .intro-right {
-      flex: 1.3 1 360px;
-      min-width: 320px;
+      max-width: 900px;
     }
 
     .intro-left iframe {
@@ -110,14 +111,6 @@
       background: #f7f9fd;
     }
 
-    .content-text h3 {
-      margin-top: 0;
-    }
-
-    .content-text p {
-      margin-bottom: 0.7rem;
-    }
-
     @media (max-width: 900px) {
       #mappa-nascita-foggia {
         height: 260px;
@@ -140,7 +133,7 @@
         <nav class="main-nav">
           <a href="../../index.html">Home</a>
           <a href="../../mappa.html">Mappa</a>
-          <a href="../02-piazza-del-lago/index.html" class="active">Percorsi</a>
+          <a href="../../percorsi.html" class="active">Percorsi</a>
           <a href="../../luoghi/index.html">Luoghi</a>
           <a href="../../svago.html">Svago</a>
           <a href="../../guida-ai.html">Guida AI</a>
@@ -160,11 +153,56 @@
             Piazza del Lago, la Taverna del Gufo (chiesa di San Tommaso), la Cattedrale e via Arpi:
             quattro luoghi che raccontano il momento in cui Foggia smette di essere solo campagna e diventa città.
           </p>
+
+          <!-- Testo lungo spostato nel riquadro principale -->
+          <div class="hero-longtext">
+            <p>
+              Foggia nasce nel Medioevo, ma su una terra attraversata da secoli. Prima della città c’erano
+              le campagne del Tavoliere, le tracce dell’antica Arpi e una rete di piste che collegavano
+              l’interno (Troia, Lucera) ai porti dell’Adriatico, come Siponto. Proprio lungo una di queste
+              strade – l’asse che univa Siponto a Troia – sorgeva una semplice posta di sosta: la
+              <strong>Taverna del Gufo</strong>, all’altezza di quella che oggi è la chiesa di San Tommaso
+              e l’inizio di <strong>via Arpi</strong>.
+            </p>
+
+            <p>
+              Il cuore della nascita di Foggia è un luogo d’acqua: un piccolo pantano o lago, dove oggi
+              si apre <strong>Piazza del Lago</strong>. Qui storia e leggenda si intrecciano. Le fonti
+              raccontano che, nella seconda metà dell’XI secolo, i Normanni bonificarono le paludi e
+              favorirono la nascita di un villaggio agricolo attorno a una chiesa dedicata a
+              <strong>Santa Maria de Fovea</strong> (“della fossa”), chiaro riferimento alla conca
+              d’acqua che caratterizzava la zona.
+            </p>
+
+            <p>
+              La tradizione popolare, invece, narra che in quel pantano alcuni pastori videro tre
+              fiammelle danzare sull’acqua e un bue inginocchiarsi: scavando nel fango, avrebbero
+              trovato un’antica icona della Madonna, l’<strong>Iconavetere</strong>, la futura
+              <strong>Madonna dei Sette Veli</strong>. Da quel prodigio sarebbe nato il primo nucleo
+              della città.
+            </p>
+
+            <p>
+              Dopo il ritrovamento, secondo la leggenda, l’icona fu portata alla vicina
+              <strong>Taverna del Gufo</strong>, trasformata nel primo oratorio e poi nella chiesa di
+              <strong>San Tommaso</strong>: una posta di strada che diventa luogo sacro. Poco più avanti,
+              lungo la stessa linea, sorse la chiesa di <strong>Santa Maria</strong>, l’attuale
+              <strong>Cattedrale</strong>, destinata a custodire stabilmente l’Iconavetere e a diventare
+              il grande santuario cittadino.
+            </p>
+
+            <p>
+              <strong>Via Arpi</strong>, che oggi unisce Piazza del Lago, San Tommaso e la Cattedrale,
+              conserva ancora il senso di quel tracciato: era il tratto urbano di un percorso più lungo
+              che collegava il Tavoliere ai monti e ai porti. Camminando lungo questo itinerario, si
+              ripercorre la trasformazione di un pantano, una taverna e una strada di passaggio nella
+              città di Foggia.
+            </p>
+          </div>
         </section>
 
-        <!-- CONTENUTO A DUE COLONNE -->
+        <!-- CONTENUTO SOTTO: HEYGEN + MAPPA + VIDEO, UNA COLONNA -->
         <section class="intro-layout">
-          <!-- COLONNA SINISTRA: HEYGEN + MAPPA + VIDEO -->
           <div class="intro-left">
             <!-- HeyGen -->
             <div class="intro-media">
@@ -211,7 +249,6 @@
               <article class="video-card">
                 <h4>La Cattedrale</h4>
                 <p>Il santuario dell’Iconavetere: video in arrivo.</p>
-                <!-- iframe vuoto da riempire in seguito -->
                 <div class="video-placeholder">
                   Qui inseriremo il video sulla Cattedrale.
                 </div>
@@ -221,69 +258,18 @@
               <article class="video-card">
                 <h4>Via Arpi</h4>
                 <p>La strada antica che collegava Siponto e Troia: video in arrivo.</p>
-                <!-- iframe vuoto da riempire in seguito -->
                 <div class="video-placeholder">
                   Qui inseriremo il video su via Arpi.
                 </div>
               </article>
             </div>
           </div>
-
-          <!-- COLONNA DESTRA: TESTO STORICO -->
-          <div class="intro-right content-text">
-            <h3>La nascita di Foggia: tra pantani, strade e un’icona nascosta</h3>
-
-            <p>
-              Foggia nasce nel Medioevo, ma su una terra attraversata da secoli. Prima della città c’erano
-              le campagne del Tavoliere, le tracce dell’antica Arpi e una rete di piste che collegavano
-              l’interno (Troia, Lucera) ai porti dell’Adriatico, come Siponto. Proprio lungo una di queste
-              strade – l’asse che univa Siponto a Troia – sorgeva una semplice posta di sosta: la
-              <strong>Taverna del Gufo</strong>, all’altezza di quella che oggi è la chiesa di San Tommaso
-              e l’inizio di <strong>via Arpi</strong>.
-            </p>
-
-            <p>
-              Il cuore della nascita di Foggia è un luogo d’acqua: un piccolo pantano o lago, dove oggi
-              si apre <strong>Piazza del Lago</strong>. Qui storia e leggenda si intrecciano. Le fonti
-              raccontano che, nella seconda metà dell’XI secolo, i Normanni bonificarono le paludi e
-              favorirono la nascita di un villaggio agricolo attorno a una chiesa dedicata a
-              <strong>Santa Maria de Fovea</strong> (“della fossa”), chiaro riferimento alla conca
-              d’acqua che caratterizzava la zona.
-            </p>
-
-            <p>
-              La tradizione popolare, invece, narra che in quel pantano alcuni pastori videro tre
-              fiammelle danzare sull’acqua e un bue inginocchiarsi: scavando nel fango, avrebbero
-              trovato un’antica icona della Madonna, l’<strong>Iconavetere</strong>, la futura
-              <strong>Madonna dei Sette Veli</strong>. Da quel prodigio sarebbe nato il primo nucleo
-              della città.
-            </p>
-
-            <p>
-              Dopo il ritrovamento, secondo la leggenda, l’icona fu portata alla vicina
-              <strong>Taverna del Gufo</strong>, trasformata nel primo oratorio e poi nella chiesa di
-              <strong>San Tommaso</strong>: una posta di strada che diventa luogo sacro. Poco più avanti,
-              lungo la stessa linea, sorse la chiesa di <strong>Santa Maria</strong>, l’attuale
-              <strong>Cattedrale</strong>, destinata a custodire stabilmente l’Iconavetere e a diventare
-              il grande santuario cittadino.
-            </p>
-
-            <p>
-              <strong>Via Arpi</strong>, che oggi unisce Piazza del Lago, San Tommaso e la Cattedrale,
-              conserva ancora il senso di quel tracciato: era il tratto urbano di un percorso più lungo
-              che collegava il Tavoliere ai monti e ai porti. Camminando lungo questo itinerario, si
-              ripercorre la trasformazione di un pantano, una taverna e una strada di passaggio nella
-              città di Foggia.
-            </p>
-          </div>
         </section>
-
-        <!-- Se vuoi, puoi aggiungere qui una side-panel didattica come nelle altre pagine -->
       </main>
 
       <footer class="site-footer">
         <span>Progetto “Foggia Tour Virtuale” – Itinerario: Là dove Foggia è nata</span>
-        <span class="footer-tag">Versione iniziale</span>
+        <span class="footer-tag">Versione aggiornata</span>
       </footer>
     </div>
   </div>
@@ -343,3 +329,4 @@
   </script>
 </body>
 </html>
+
