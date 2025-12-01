@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
-  <title>Mappa dei percorsi – Foggia Tour Virtuale</title>
+  <title>Luoghi dei percorsi – Foggia Tour Virtuale</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -122,9 +122,9 @@
         </div>
         <nav class="main-nav">
           <a href="../index.html">Home</a>
-          <a href="../mappa.html" class="active">Mappa</a>
-          <a href="../itinerari/01-campi-diomedei/index.html">Percorsi</a>
-          <a href="index.html">Luoghi</a>
+          <a href="../mappa.html">Mappa</a>
+          <a href="../percorsi.html">Percorsi</a>
+          <a href="index.html" class="active">Luoghi</a>
           <a href="../svago.html">Svago</a>
           <a href="../guida-ai.html">Guida AI</a>
           <a href="../info.html">Info</a>
@@ -132,21 +132,21 @@
       </header>
 
       <main class="layout-main">
-        <!-- HERO MAPPA -->
+        <!-- HERO LUOGHI -->
         <section class="hero hero-mappa">
-          <div class="hero-eyebrow"><span class="dot"></span> Mappa</div>
-          <h2>Mappa dei 10 itinerari di Foggia</h2>
+          <div class="hero-eyebrow"><span class="dot"></span> Luoghi</div>
+          <h2>Luoghi dei percorsi di Foggia</h2>
           <p class="hero-tagline">
-            Una vista d’insieme dei percorsi principali: ogni itinerario è rappresentato da un segnaposto,
-            con link diretto alla pagina dedicata.
+            Una panoramica dei luoghi chiave collegati agli itinerari: ogni punto è una porta
+            d’ingresso alla storia, alla cultura e allo svago della città.
           </p>
           <p class="hero-note">
-            La mappa è pensata per avere un colpo d’occhio immediato: dove si trovano i percorsi,
-            come sono distribuiti nella città, da dove ti conviene iniziare.
+            Da qui puoi orientarti tra i diversi itinerari, vedere dove si trovano i luoghi sul territorio
+            e raggiungere le pagine dedicate per approfondire ciò che ti interessa di più.
           </p>
         </section>
 
-        <!-- MAPPA + ELENCO ITINERARI -->
+        <!-- MAPPA + ELENCO ITINERARI / LUOGHI -->
         <section class="map-layout">
           <section class="map-panel">
             <div id="mappa-percorsi"></div>
@@ -154,7 +154,10 @@
 
           <aside class="map-sidebar">
             <h3>Itinerari disponibili</h3>
-            <p>Clicca sul nome per aprire la pagina del percorso. Sulla mappa puoi toccare i segnaposto per vedere titolo e link.</p>
+            <p>
+              Clicca sul nome per aprire la pagina del percorso. Sulla mappa puoi toccare
+              i segnaposto per vedere titolo e link.
+            </p>
             <ol class="itinerary-list">
               <li>
                 1. <a href="../itinerari/01-campi-diomedei/index.html">Dalle capanne ai parchi</a>
@@ -200,7 +203,7 @@
           </aside>
         </section>
 
-        <!-- SEZIONE DIDATTICA (RIADATTATA) -->
+        <!-- SEZIONE DIDATTICA -->
         <section class="side-panel">
           <section class="school-section">
             <h3>Per la classe quinta</h3>
@@ -209,7 +212,7 @@
             </p>
             <p>
               • migliorare la distribuzione dei percorsi sulla mappa;<br />
-              • aggiungere descrizioni sintetiche agli itinerari;<br />
+              • aggiungere descrizioni sintetiche ai luoghi e agli itinerari;<br />
               • inserire icone diverse per i vari tipi di percorso (storico, verde, religioso, ecc.);<br />
               • collegare la mappa a video o gallery delle singole tappe.
             </p>
@@ -218,7 +221,7 @@
       </main>
 
       <footer class="site-footer">
-        <span>Progetto “Foggia Tour Virtuale” – Mappa dei percorsi</span>
+        <span>Progetto “Foggia Tour Virtuale” – Luoghi dei percorsi</span>
         <span class="footer-tag">Versione beta</span>
       </footer>
     </div>
@@ -312,7 +315,7 @@
       marker.bindPopup(
         '<strong>' + it.nome + '</strong><br>' +
         it.descr + '<br>' +
-        '<a href=\"' + it.url + '\">Apri itinerario</a>'
+        '<a href="' + it.url + '">Apri itinerario</a>'
       );
       markers.push(marker);
     });
@@ -323,3 +326,4 @@
   </script>
 </body>
 </html>
+
