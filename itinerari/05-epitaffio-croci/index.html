@@ -12,7 +12,6 @@
   />
   <link rel="stylesheet" href="../../assets/css/style.css" />
 
-  <!-- Stili specifici per questa pagina (due colonne: testo + video/mappa) -->
   <style>
     .content-grid {
       display: flex;
@@ -22,40 +21,41 @@
       margin-top: 1.5rem;
     }
 
+    /* VIDEO E MAPPA – ora a sinistra */
+    .content-side {
+      flex: 1 1 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* TESTO – ora a destra */
     .content-main {
-      flex: 2 1 360px;
+      flex: 2 1 380px;
       background: #ffffff;
       border-radius: 16px;
       padding: 20px 22px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-      color: #1f2933;           /* testo scuro */
-    }
-
-    .content-main p {
-      margin-bottom: 0.9rem;
-      text-align: justify;
-      color: #1f2933;           /* assicura testo leggibile */
+      color: #1f2933;
       line-height: 1.6;
     }
 
-    .content-side {
-      flex: 1 1 280px;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
+    .content-main p {
+      margin-bottom: 1rem;
+      color: #1f2933;
+      text-align: justify;
     }
 
     .card-panel {
       background: #ffffff;
       border-radius: 16px;
       padding: 16px 18px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-      color: #1f2933;           /* testo scuro nella card */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      color: #1f2933;
     }
 
     .card-panel h3 {
-      margin-top: 0;
-      margin-bottom: 0.6rem;
+      margin: 0 0 0.6rem 0;
       font-size: 1.05rem;
       color: #1f2933;
     }
@@ -69,7 +69,7 @@
     .video-embed {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 */
+      padding-bottom: 56.25%;
       overflow: hidden;
       border-radius: 12px;
     }
@@ -96,13 +96,8 @@
 
     .map-button:hover {
       background: #005f8e;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
       transform: translateY(-1px);
-    }
-
-    .map-button:active {
-      transform: translateY(0);
-      box-shadow: none;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
     }
 
     .map-note {
@@ -141,7 +136,6 @@
       </header>
 
       <main class="layout-main">
-        <!-- Hero con titolo e breve descrizione -->
         <section class="hero">
           <div class="hero-eyebrow">
             <span class="dot"></span> Luogo dell’itinerario “Croci sulla pianura”
@@ -152,8 +146,40 @@
           </p>
         </section>
 
-        <!-- Testo a sinistra, video + mappa a destra -->
+        <!-- GRIGLIA: ora VIDEO/MAPPA A SINISTRA, TESTO A DESTRA -->
         <section class="content-grid">
+
+          <!-- LATO SINISTRO -->
+          <aside class="content-side">
+
+            <section class="card-panel">
+              <h3>Video: Cappellone delle Croci</h3>
+              <p>Una breve introduzione al luogo più simbolico dell’itinerario “Croci sulla pianura”.</p>
+              <div class="video-embed">
+                <iframe
+                  src="https://app.heygen.com/embedded-player/4e71e22bbcb64e6fa43901985c96c449"
+                  title="HeyGen video player"
+                  frameborder="0"
+                  allow="encrypted-media; fullscreen;"
+                  allowfullscreen></iframe>
+              </div>
+            </section>
+
+            <section class="card-panel">
+              <h3>Come arrivare</h3>
+              <p>Apre la posizione su Google Maps per raggiungere il Cappellone delle Croci.</p>
+              <a class="map-button"
+                 href="https://www.google.com/maps/dir/?api=1&destination=41.466751,15.539782"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Apri in Google Maps
+              </a>
+              <p class="map-note">Coordinate: 41.466751, 15.539782</p>
+            </section>
+
+          </aside>
+
+          <!-- LATO DESTRO → TESTO PRINCIPALE -->
           <article class="content-main">
             <p>
               Il Cappellone delle Croci è uno dei luoghi più simbolici e misteriosi di Foggia. Nasce alla fine
@@ -181,45 +207,6 @@
             </p>
           </article>
 
-          <aside class="content-side">
-            <!-- Video HeyGen -->
-            <section class="card-panel">
-              <h3>Video: Cappellone delle Croci</h3>
-              <p>
-                Guarda il video introduttivo: una breve guida che racconta le origini del Cappellone, la sua
-                funzione votiva e il legame con la storia della città.
-              </p>
-              <div class="video-embed">
-                <iframe
-                  src="https://app.heygen.com/embedded-player/4e71e22bbcb64e6fa43901985c96c449"
-                  title="HeyGen video player"
-                  frameborder="0"
-                  allow="encrypted-media; fullscreen;"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </section>
-
-            <!-- Geolocalizzazione / mappa -->
-            <section class="card-panel">
-              <h3>Come arrivare</h3>
-              <p>
-                Vuoi raggiungere il Cappellone delle Croci? Apri la posizione su Google Maps e segui il percorso
-                a piedi, in bici o in auto dal punto in cui ti trovi.
-              </p>
-              <a
-                class="map-button"
-                href="https://www.google.com/maps/dir/?api=1&destination=41.466751,15.539782"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Apri in Google Maps
-              </a>
-              <p class="map-note">
-                Coordinate: 41.466751, 15.539782 (Chiesa/Cappellone delle Croci, Foggia).
-              </p>
-            </section>
-          </aside>
         </section>
       </main>
 
@@ -231,4 +218,5 @@
   </div>
 </body>
 </html>
+
 
