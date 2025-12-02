@@ -43,83 +43,29 @@
       </header>
 
       <main class="layout-main">
+        <!-- HERO -->
         <section class="hero">
           <div class="hero-eyebrow"><span class="dot"></span> Itinerario</div>
           <h2>Musei e memoria: dove Foggia si racconta</h2>
           <p class="hero-tagline">
             Un percorso tra musei e collezioni che custodiscono la storia e l'identità del territorio.
           </p>
-          <p class="hero-note">
-            In questo itinerario esplori i principali musei della città: storia antica, arte moderna,
-            natura e scienza raccontano Foggia da punti di vista diversi, ma complementari.
-          </p>
         </section>
 
-        <!-- SEZIONE PRINCIPALE: TESTO + MAPPA + VIDEO -->
-        <section class="itinerary-section" style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start;margin-top:2rem;">
-          <!-- Colonna testo -->
-          <div class="itinerary-text" style="flex:1 1 320px;min-width:280px;">
-            <h3>I Musei di Foggia</h3>
-            <p>
-              Foggia racconta se stessa anche attraverso i suoi musei: luoghi dove la storia, l’arte,
-              la natura e la scienza diventano esperienza viva. Il percorso dedicato ai musei permette
-              di scoprire l’identità profonda della città, dalle origini della Daunia alla modernità del
-              Novecento.
-            </p>
+        <!-- LAYOUT: MAPPA A SINISTRA, VIDEO + TESTO A DESTRA -->
+        <section class="itinerary-layout"
+                 style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start;margin-top:2rem;">
 
-            <h4>Museo Civico e Palazzo Arpi</h4>
-            <p>
-              È il cuore storico della città. Custodisce reperti della Daunia, testimonianze medievali,
-              il lapidario e una pinacoteca storica. Il tutto in un edificio che si affaccia su Piazza Nigri
-              e conserva tracce dell’antica reggia federiciana. È il punto di partenza ideale per
-              comprendere la storia di Foggia.
-            </p>
-
-            <h4>Museo del Territorio di Foggia</h4>
-            <p>
-              È il museo che racconta la Capitanata attraverso lo sguardo di chi la studia. Non solo
-              oggetti, ma metodo: accanto ai materiali di scavo, ai calchi e ai plastici, il visitatore trova
-              pannelli chiari e cartografie tematiche che guidano in percorsi di storia del territorio
-              pensati per i non specialisti.
-            </p>
-            <p>
-              L’allestimento attuale è diviso in due sezioni principali: una introduttiva, che offre le
-              coordinate storiche e ambientali, e una dedicata alla produzione materiale e artistica
-              della Capitanata medievale. Il percorso si chiude con un approfondimento sulle risorse
-              archeologiche e sul patrimonio storico-artistico del territorio, trasformando il museo in una
-              vera sintesi critica della storia locale.
-            </p>
-
-            <h4>Pinacoteca "Il 9cento"</h4>
-            <p>
-              Un viaggio nell’arte moderna e contemporanea, con opere di Guttuso, Levi, Lazzari e altri
-              importanti artisti del Novecento. È il museo che mostra il volto creativo e culturale della
-              Foggia più recente, collegando la città ai linguaggi artistici del Novecento italiano.
-            </p>
-
-            <h4>Museo di Storia Naturale</h4>
-            <p>
-              Qui il Tavoliere diventa racconto scientifico: reperti faunistici, collezioni malacologiche
-              uniche in Puglia e calchi paleontologici coinvolgono visitatori di ogni età. Un museo
-              perfetto per scuole e famiglie, dove la natura del territorio si trasforma in laboratorio
-              educativo.
-            </p>
-
-            <h4>Museo Interattivo delle Scienze "Via Futura"</h4>
-            <p>
-              La scienza da toccare: esperimenti, strumenti interattivi e percorsi STEM che rendono
-              l’apprendimento un gioco intelligente. È uno spazio pensato per studenti e curiosi,
-              dove tecnologia e divulgazione lavorano insieme per avvicinare tutti al linguaggio
-              della scienza.
-            </p>
+          <!-- MAPPA A SINISTRA -->
+          <div class="map-column" style="flex:1 1 320px;min-width:280px;">
+            <div id="musei-map"
+                 style="width:100%;height:400px;border-radius:12px;overflow:hidden;"></div>
           </div>
 
-          <!-- Colonna mappa + video -->
-          <div class="itinerary-media" style="flex:1 1 320px;min-width:280px;display:flex;flex-direction:column;gap:1rem;">
-            <!-- Mappa con geolocalizzazione dei musei -->
-            <div id="musei-map" style="width:100%;height:340px;border-radius:12px;overflow:hidden;"></div>
+          <!-- VIDEO + TESTO A DESTRA -->
+          <div class="content-column" style="flex:1 1 360px;min-width:300px;display:flex;flex-direction:column;gap:1.5rem;">
 
-            <!-- Video HeyGen a fianco dell'itinerario -->
+            <!-- VIDEO SOPRA IL TESTO -->
             <div class="video-wrapper" style="width:100%;">
               <iframe
                 width="560"
@@ -131,6 +77,63 @@
                 allowfullscreen
                 style="width:100%;border-radius:12px;"
               ></iframe>
+            </div>
+
+            <!-- TESTO MUSEI -->
+            <div class="itinerary-text">
+              <h3>I Musei di Foggia</h3>
+              <p>
+                Foggia racconta se stessa anche attraverso i suoi musei: luoghi dove la storia, l’arte,
+                la natura e la scienza diventano esperienza viva. Il percorso dedicato ai musei permette
+                di scoprire l’identità profonda della città, dalle origini della Daunia alla modernità del
+                Novecento.
+              </p>
+
+              <h4>Museo Civico e Palazzo Arpi</h4>
+              <p>
+                È il cuore storico della città. Custodisce reperti della Daunia, testimonianze medievali,
+                il lapidario e una pinacoteca storica. Il tutto in un edificio che si affaccia su Piazza Nigri
+                e conserva tracce dell’antica reggia federiciana. È il punto di partenza ideale per
+                comprendere la storia di Foggia.
+              </p>
+
+              <h4>Museo del Territorio di Foggia</h4>
+              <p>
+                È il museo che racconta la Capitanata attraverso lo sguardo di chi la studia. Non solo
+                oggetti, ma metodo: accanto ai materiali di scavo, ai calchi e ai plastici, il visitatore trova
+                pannelli chiari e cartografie tematiche che guidano in percorsi di storia del territorio
+                pensati per i non specialisti.
+              </p>
+              <p>
+                L’allestimento attuale è diviso in due sezioni principali: una introduttiva, che offre le
+                coordinate storiche e ambientali, e una dedicata alla produzione materiale e artistica
+                della Capitanata medievale. Il percorso si chiude con un approfondimento sulle risorse
+                archeologiche e sul patrimonio storico-artistico del territorio, trasformando il museo in una
+                vera sintesi critica della storia locale.
+              </p>
+
+              <h4>Pinacoteca "Il 9cento"</h4>
+              <p>
+                Un viaggio nell’arte moderna e contemporanea, con opere di Guttuso, Levi, Lazzari e altri
+                importanti artisti del Novecento. È il museo che mostra il volto creativo e culturale della
+                Foggia più recente, collegando la città ai linguaggi artistici del Novecento italiano.
+              </p>
+
+              <h4>Museo di Storia Naturale</h4>
+              <p>
+                Qui il Tavoliere diventa racconto scientifico: reperti faunistici, collezioni malacologiche
+                uniche in Puglia e calchi paleontologici coinvolgono visitatori di ogni età. Un museo
+                perfetto per scuole e famiglie, dove la natura del territorio si trasforma in laboratorio
+                educativo.
+              </p>
+
+              <h4>Museo Interattivo delle Scienze "Via Futura"</h4>
+              <p>
+                La scienza da toccare: esperimenti, strumenti interattivi e percorsi STEM che rendono
+                l’apprendimento un gioco intelligente. È uno spazio pensato per studenti e curiosi,
+                dove tecnologia e divulgazione lavorano insieme per avvicinare tutti al linguaggio
+                della scienza.
+              </p>
             </div>
           </div>
         </section>
@@ -175,7 +178,7 @@
           indirizzo: 'Via Arpi 155'
         },
         {
-          nome: 'Pinacoteca Civica "Il 9cento"',
+          nome: 'Pinacoteca Civica \"Il 9cento\"',
           lat: 41.4585017,
           lon: 15.5442189,
           indirizzo: 'Via Ferrante Aporti 1'
@@ -187,7 +190,7 @@
           indirizzo: 'Viale Giuseppe di Vittorio 31'
         },
         {
-          nome: 'Museo Interattivo delle Scienze "Via Futura"',
+          nome: 'Museo Interattivo delle Scienze \"Via Futura\"',
           lat: 41.444289,
           lon: 15.570834,
           indirizzo: 'Via Imperiale'
