@@ -11,6 +11,14 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Leaflet CSS per la mappa -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
 </head>
 <body>
   <div class="app-shell">
@@ -26,7 +34,7 @@
         <nav class="main-nav">
           <a href="../../index.html">Home</a>
           <a href="../../mappa.html">Mappa</a>
-          <a href="../01-campi-diomedei/index.html" class="active">Percorsi</a>
+          <a href="../index.html" class="active">Percorsi</a>
           <a href="../../luoghi/index.html">Luoghi</a>
           <a href="../../svago.html">Svago</a>
           <a href="../../guida-ai.html">Guida AI</a>
@@ -42,31 +50,156 @@
             Un percorso tra musei e collezioni che custodiscono la storia e l'identità del territorio.
           </p>
           <p class="hero-note">
-            Questa è la pagina iniziale dell'itinerario. Gli studenti potranno aggiungere mappa, tappe,
-            foto, video e curiosità.
+            In questo itinerario esplori i principali musei della città: storia antica, arte moderna,
+            natura e scienza raccontano Foggia da punti di vista diversi, ma complementari.
           </p>
         </section>
 
-        <section class="side-panel">
-          <section class="school-section">
-            <h3>Per la classe quinta</h3>
+        <!-- SEZIONE PRINCIPALE: TESTO + MAPPA + VIDEO -->
+        <section class="itinerary-section" style="display:flex;flex-wrap:wrap;gap:2rem;align-items:flex-start;margin-top:2rem;">
+          <!-- Colonna testo -->
+          <div class="itinerary-text" style="flex:1 1 320px;min-width:280px;">
+            <h3>I Musei di Foggia</h3>
             <p>
-              In questa pagina vanno progettati:
+              Foggia racconta se stessa anche attraverso i suoi musei: luoghi dove la storia, l’arte,
+              la natura e la scienza diventano esperienza viva. Il percorso dedicato ai musei permette
+              di scoprire l’identità profonda della città, dalle origini della Daunia alla modernità del
+              Novecento.
+            </p>
+
+            <h4>Museo Civico e Palazzo Arpi</h4>
+            <p>
+              È il cuore storico della città. Custodisce reperti della Daunia, testimonianze medievali,
+              il lapidario e una pinacoteca storica. Il tutto in un edificio che si affaccia su Piazza Nigri
+              e conserva tracce dell’antica reggia federiciana. È il punto di partenza ideale per
+              comprendere la storia di Foggia.
+            </p>
+
+            <h4>Museo del Territorio di Foggia</h4>
+            <p>
+              È il museo che racconta la Capitanata attraverso lo sguardo di chi la studia. Non solo
+              oggetti, ma metodo: accanto ai materiali di scavo, ai calchi e ai plastici, il visitatore trova
+              pannelli chiari e cartografie tematiche che guidano in percorsi di storia del territorio
+              pensati per i non specialisti.
             </p>
             <p>
-              • una breve introduzione all'itinerario;<br />
-              • l'elenco delle tappe principali;<br />
-              • una mappa del percorso e, se possibile, un video o una galleria immagini.
+              L’allestimento attuale è diviso in due sezioni principali: una introduttiva, che offre le
+              coordinate storiche e ambientali, e una dedicata alla produzione materiale e artistica
+              della Capitanata medievale. Il percorso si chiude con un approfondimento sulle risorse
+              archeologiche e sul patrimonio storico-artistico del territorio, trasformando il museo in una
+              vera sintesi critica della storia locale.
             </p>
-          </section>
+
+            <h4>Pinacoteca "Il 9cento"</h4>
+            <p>
+              Un viaggio nell’arte moderna e contemporanea, con opere di Guttuso, Levi, Lazzari e altri
+              importanti artisti del Novecento. È il museo che mostra il volto creativo e culturale della
+              Foggia più recente, collegando la città ai linguaggi artistici del Novecento italiano.
+            </p>
+
+            <h4>Museo di Storia Naturale</h4>
+            <p>
+              Qui il Tavoliere diventa racconto scientifico: reperti faunistici, collezioni malacologiche
+              uniche in Puglia e calchi paleontologici coinvolgono visitatori di ogni età. Un museo
+              perfetto per scuole e famiglie, dove la natura del territorio si trasforma in laboratorio
+              educativo.
+            </p>
+
+            <h4>Museo Interattivo delle Scienze "Via Futura"</h4>
+            <p>
+              La scienza da toccare: esperimenti, strumenti interattivi e percorsi STEM che rendono
+              l’apprendimento un gioco intelligente. È uno spazio pensato per studenti e curiosi,
+              dove tecnologia e divulgazione lavorano insieme per avvicinare tutti al linguaggio
+              della scienza.
+            </p>
+          </div>
+
+          <!-- Colonna mappa + video -->
+          <div class="itinerary-media" style="flex:1 1 320px;min-width:280px;display:flex;flex-direction:column;gap:1rem;">
+            <!-- Mappa con geolocalizzazione dei musei -->
+            <div id="musei-map" style="width:100%;height:340px;border-radius:12px;overflow:hidden;"></div>
+
+            <!-- Video HeyGen a fianco dell'itinerario -->
+            <div class="video-wrapper" style="width:100%;">
+              <iframe
+                width="560"
+                height="315"
+                src="https://app.heygen.com/embedded-player/0b2728a7821e4772b78831f978a752e2"
+                title="HeyGen video player"
+                frameborder="0"
+                allow="encrypted-media; fullscreen;"
+                allowfullscreen
+                style="width:100%;border-radius:12px;"
+              ></iframe>
+            </div>
+          </div>
         </section>
       </main>
 
       <footer class="site-footer">
         <span>Progetto “Foggia Tour Virtuale” – Musei e memoria: dove Foggia si racconta</span>
-        <span class="footer-tag">Bozza itinerario</span>
+        <span class="footer-tag">Itinerario musei</span>
       </footer>
     </div>
   </div>
+
+  <!-- Leaflet JS per la mappa -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Centro indicativo su Foggia
+      var map = L.map('musei-map').setView([41.4615, 15.55], 13);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      // Marker musei
+      var musei = [
+        {
+          nome: 'Museo Civico e Palazzo Arpi',
+          lat: 41.4650593,
+          lon: 15.5451508,
+          indirizzo: 'Piazza Vincenzo Nigri 1'
+        },
+        {
+          nome: 'Museo del Territorio di Foggia',
+          lat: 41.463187,
+          lon: 15.54055,
+          indirizzo: 'Via Arpi 155'
+        },
+        {
+          nome: 'Pinacoteca Civica "Il 9cento"',
+          lat: 41.4585017,
+          lon: 15.5442189,
+          indirizzo: 'Via Ferrante Aporti 1'
+        },
+        {
+          nome: 'Museo di Storia Naturale',
+          lat: 41.457224,
+          lon: 15.561731,
+          indirizzo: 'Viale Giuseppe di Vittorio 31'
+        },
+        {
+          nome: 'Museo Interattivo delle Scienze "Via Futura"',
+          lat: 41.444289,
+          lon: 15.570834,
+          indirizzo: 'Via Imperiale'
+        }
+      ];
+
+      musei.forEach(function (m) {
+        L.marker([m.lat, m.lon])
+          .addTo(map)
+          .bindPopup('<strong>' + m.nome + '</strong><br>' + m.indirizzo);
+      });
+    });
+  </script>
 </body>
 </html>
