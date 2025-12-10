@@ -46,6 +46,13 @@
       text-align: justify;
     }
 
+    .content-main h3 {
+      margin-top: 1.4rem;
+      margin-bottom: 0.6rem;
+      font-size: 1.05rem;
+      color: #1f2933;
+    }
+
     .card-panel {
       background: #ffffff;
       border-radius: 16px;
@@ -104,6 +111,37 @@
       font-size: 0.85rem;
       color: #555;
       margin-top: 0.5rem;
+    }
+
+    .timeline {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.5rem 0 0;
+      border-left: 2px solid #e2e8f0;
+    }
+
+    .timeline li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 0.4rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #0077b6;
+    }
+
+    .tips-list {
+      margin-top: 0.4rem;
+      padding-left: 1.1rem;
+      font-size: 0.95rem;
     }
 
     @media (max-width: 768px) {
@@ -205,6 +243,89 @@
               memoria, devozione e identità. Chi vi entra attraversa secoli di storia foggiana, tra miracoli,
               ricostruzioni e lotte silenziose.
             </p>
+
+            <!-- NUOVE SEZIONI DI APPROFONDIMENTO -->
+
+            <h3>Perché è un Monumento Nazionale</h3>
+            <p>
+              La Chiesa delle Croci – con il suo Cappellone, le cappelle e la chiesetta – non è un semplice
+              oratorio di quartiere. È l’unico monumento nazionale riconosciuto a Foggia, perché concentra in
+              pochi metri la memoria di un voto popolare, la forma di un quartiere intero (Borgo Croci) e una
+              stratificazione di storia religiosa e civile che attraversa tre secoli.
+            </p>
+            <p>
+              Dal miracolo invocato contro la siccità alla costruzione del complesso devozionale, fino alla
+              funzione identitaria per il quartiere e per la città, il Cappellone è diventato un simbolo
+              ufficiale: un punto di riferimento per chi studia Foggia e per chi semplicemente la abita.
+            </p>
+
+            <h3>Una breve timeline del Cappellone</h3>
+            <ul class="timeline">
+              <li><strong>1693</strong> – Processione guidata da padre Antonio de Olivadi: arriva la pioggia,
+                nascono le prime sette croci piantate nel terreno come segno di ringraziamento.</li>
+              <li><strong>Fine XVII – inizi XVIII secolo</strong> – Le croci si trasformano in cappelle, si
+                struttura il percorso dei misteri della Via Crucis.</li>
+              <li><strong>Dopo il terremoto del 1731</strong> – Il complesso diventa nucleo del nascente Borgo
+                Croci: attorno alle cappelle si costruiscono case, vicoli, una nuova porzione di città.</li>
+              <li><strong>Ottocento</strong> – La cripta e gli spazi sotterranei entrano nella tradizione come
+                luogo di riunioni carbonare e di cospirazioni per l’Unità d’Italia.</li>
+              <li><strong>Novecento</strong> – Il complesso sopravvive alle trasformazioni urbanistiche, pur
+                perdendo parte dei camminamenti sotterranei.</li>
+              <li><strong>2016</strong> – Restauro della facciata del Cappellone: il nuovo colore apre un acceso
+                dibattito cittadino sulla memoria dei luoghi.</li>
+            </ul>
+
+            <h3>Architettura e barocco povero</h3>
+            <p>
+              Il Cappellone funzione come ingresso scenografico al complesso, ma la sua bellezza non è quella
+              dei grandi cantieri di corte: è un barocco “povero”, costruito con materiali semplici,
+              maestranze locali e una forte carica simbolica. Dietro l’arco si sviluppano la chiesetta e le
+              cappelle, con altari dedicati, volte dipinte e una pavimentazione che nascondeva l’accesso alla
+              cripta dei confratelli.
+            </p>
+            <p>
+              Questo stile sobrio, quasi asciutto, racconta un’altra idea di barocco: non l’eccesso decorativo,
+              ma la capacità di trasformare un quartiere periferico in un teatro di fede condivisa.
+            </p>
+
+            <h3>Cripta, camminamenti e riunioni clandestine</h3>
+            <p>
+              Sotto il piano della chiesa si trovava la cripta, luogo di sepoltura dei confratelli e oggi spazio
+              espositivo legato alla religiosità popolare. Secondo la tradizione, qui si sarebbero tenute anche
+              riunioni segrete di Carbonari e patrioti, che sfruttavano camminamenti sotterranei ormai in gran
+              parte cancellati dall’urbanizzazione moderna.
+            </p>
+            <p>
+              È proprio questo doppio livello – liturgico in superficie, politico nel sottosuolo – a rendere il
+              complesso un “laboratorio” di libertà: un luogo dove la Foggia devota e la Foggia ribelle si sono
+              sfiorate senza mai dichiararsi apertamente.
+            </p>
+
+            <h3>Il restauro del 2016 e il colore che fa discutere</h3>
+            <p>
+              Il restauro della facciata del Cappellone ha riportato in luce intonaci, volumi e dettagli
+              architettonici, ma il colore scelto ha acceso un conflitto simbolico: per molti cittadini non
+              corrispondeva ai toni “naturali” ricordati dalla memoria collettiva. Ne è nata una discussione
+              accesa, in cui il monumento è diventato un campo di battaglia tra criteri tecnici, gusto estetico e
+              legame affettivo con il luogo.
+            </p>
+            <p>
+              Questo episodio mostra come il Cappellone non sia solo un oggetto da restaurare, ma una parte
+              viva dell’identità di Foggia: ogni scelta che lo riguarda parla, nel bene e nel male, di chi oggi
+              abita la città.
+            </p>
+
+            <h3>Lo sapevi che…?</h3>
+            <ul class="tips-list">
+              <li>Il complesso delle Croci nasce da un voto collettivo: furono i cittadini a volere che il
+                miracolo della pioggia venisse ricordato per sempre.</li>
+              <li>Il Cappellone è la “porta” di un intero quartiere: il Borgo Croci prende forma proprio attorno
+                alle cappelle e alla chiesa.</li>
+              <li>La cripta, da luogo di sepoltura, è oggi un piccolo museo della devozione popolare, dove la
+                memoria religiosa incontra quella civile.</li>
+              <li>Eventi, processioni e celebrazioni legati al complesso continuano a segnare il calendario
+                cittadino, tenendo vivo il legame tra il monumento nazionale e la comunità.</li>
+            </ul>
           </article>
 
         </section>
@@ -218,5 +339,3 @@
   </div>
 </body>
 </html>
-
-
